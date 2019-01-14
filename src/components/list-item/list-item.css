@@ -1,0 +1,49 @@
+.todo-item {
+    border-radius: 0px !important;
+    cursor: pointer;
+    transition: all .1s ease-in;
+    border: none;
+    border-left: 5px solid rgba(0,0,0,0.05);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+}
+
+.todo-item:not(:first-child) {
+    margin-top: 5px; 
+}
+
+.important {
+    border-left: 5px solid #f45c43;
+    /* border-left: 5px solid #ffc107; */
+}
+
+.todo-item:hover {
+    color: #4dabf7;
+    box-shadow: 0 0.25rem 0.125rem 0 rgba(0,0,0,0.05);
+}
+
+/* .important button {
+    color: white;
+    border-color: white;
+}
+
+.important button:hover {
+    background-color: white;
+    color: black;
+    border-color: white;
+} */
+
+.important span{
+    font-weight: bold;
+    color: #f45c43;
+}
+
+.done {
+    opacity: 0.3;
+    border-left: 5px solid #28a745;
+    background: transparent;
+}
+
+.done span {
+    /* color: rgb(204, 204, 204); */
+    text-decoration: line-through;          
+}
