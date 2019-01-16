@@ -5,11 +5,11 @@ import FilterButtons from '../filter-buttons';
 
 import './filter-main-block.css'
 
-const FilterMainBlock = () => {
+const FilterMainBlock = ({ onSearchChange, filter, onFilterChange }) => {
     return(
         <div className="todo-filter form-row">
-            <FilterSearchInput />
-            <FilterButtons />
+            <FilterSearchInput onSearchChange={ onSearchChange } />
+            <FilterButtons filter={ filter } onFilterChange={ onFilterChange }/>
         </div>
     );
 }

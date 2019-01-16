@@ -29,8 +29,7 @@ export default class ListItem extends Component {
   }
 
   render() {
-    const { title, onDeleted } = this.props;
-    const { done, important } = this.state;
+    const { title, onDeleted, onToggleDone, onToggleImportant, done, important } = this.props;
 
     let styleItem =
       "list-group-item todo-item d-flex justify-content-between align-items-center";
@@ -47,18 +46,16 @@ export default class ListItem extends Component {
     }
 
     return (
-      <li className={styleItem}>
-        <span onClick={this.onClickButtonDone}>
-          {title} {important ? <i className="fas fa-star" /> : null}
+      <li className={ styleItem }>
+        <span onClick={onToggleDone}>
+          { title } { important ? <i className="fas fa-star" /> : null }
         </span>
         <div className="btn-group">
-          <button onClick={this.onClickButtonDone} className="btn btn-success">
-            {iconDone}
-          </button>
+          <button onClick={onToggleDone} className="btn btn-success">{ iconDone }</button>
           <button
-            onClick={this.onClickButtonImportant}
+            onClick={onToggleImportant}
             className="btn btn-warning">
-            {iconImportant}
+            { iconImportant }
           </button>
           <button onClick={onDeleted} className="btn btn-danger">
             <i className="far fa-trash-alt" />

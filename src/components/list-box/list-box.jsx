@@ -4,7 +4,7 @@ import './list-box.css';
 
 import ListItem from '../list-item/list-item'
 
-const ListBox = ({ todos, onDeleted }) =>  {
+const ListBox = ({ todos, onDeleted, onToggleDone, onToggleImportant }) =>  {
 
     const todosEl = todos.map(({title, main, id, important, done}) => {
         return <ListItem done={done}
@@ -12,7 +12,9 @@ const ListBox = ({ todos, onDeleted }) =>  {
                         title={title}
                         main={main}
                         key={id}
-                        onDeleted={ () => { onDeleted(id) } }/>
+                        onDeleted={ () => { onDeleted(id) } }
+                        onToggleImportant={ () => { onToggleImportant(id) } }
+                        onToggleDone={ () => { onToggleDone(id) } }/>
     });
 
     return (
