@@ -35,7 +35,7 @@ export default class AddNewItemBlock extends React.Component {
         </div>
         <div className="col-lg-1 col-md-2 col-sm-12">
           <button
-            onClick={ this.props.onAddNewItem }
+            onClick={ this.onSubmit }
             type="button"
             className="btn btn-dark col">
             Add

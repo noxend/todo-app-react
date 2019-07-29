@@ -8,13 +8,14 @@ export default class App extends Component {
 
     this.state = {
       todos: [
-        { id: 2, title: "First task", important: false, done: false },
-        { id: 3, title: "Second task", important: false, done: false },
+        { id: 2, title: "First task", important: false, done: true },
+        { id: 3, title: "Second task", important: true, done: false },
         { id: 4, title: "Third task", important: false, done: false }
       ],
       term: '',
       filter: 'all'
     };
+
 
     this.fiterItems = (items, fiter) => {
       switch (fiter) {
@@ -98,6 +99,12 @@ export default class App extends Component {
         };
       });
     };
+  }
+
+  componentDidMount() {
+    fetch('/api/article')
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
   }
 
   render() {
